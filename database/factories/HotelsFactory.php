@@ -4,27 +4,21 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Hotels>
- */
 class HotelsFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    protected $model = \App\Models\Hotels::class;
+
+    public function definition()
     {
         return [
             'name' => $this->faker->lexify('Hotel ?????'),
             'description' => $this->faker->sentence(),
             'address' => $this->faker->address(),
             'city' => $this->faker->city(),
-            'province' => $this->faker->word,
-            'country' => $this->faker->country(),
-            'rating'=> $this->faker->randomFloat(2, 3, 5),
-            'image_url' => $this->faker->image(null, 640, 480)
+            'province' => $this->faker->state(),
+            'country' => $this->faker->word(),
+            'rating' => $this->faker->randomFloat(2, 3, 5), // Random rating between 3 and 5
+            'image_url' => $this->faker->imageUrl(640, 480, 'hotels'), // Fake image
         ];
     }
 }

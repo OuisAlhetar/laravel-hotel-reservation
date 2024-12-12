@@ -25,4 +25,9 @@ class Hotels extends Model
         'rating',
         'image_url'
     ];
+
+    public function rooms()
+    {
+        return $this->hasMany(Rooms::class, 'hotel_id');
+    }
 }

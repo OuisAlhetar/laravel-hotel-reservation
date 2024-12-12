@@ -2,22 +2,24 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Create some users (both admins and regular users)
+        \App\Models\User::factory()->count(10)->create(); // Creates 10 users (some admin, some regular)
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        \App\Models\Hotels::factory(10)->create();
+        // Create some hotels, rooms, and reservations
+        \App\Models\Hotels::factory()
+            ->count(5) // Create 5 hotels
+            ->has(\App\Models\Rooms::factory()->count(10), 'rooms') // Each hotel will have 10 rooms
+            ->create();
+
+        // Create reservations for random users
+        \App\Models\Reservations::factory()
+            ->count(15) // Create 15 reservations
+            ->create();
     }
 }

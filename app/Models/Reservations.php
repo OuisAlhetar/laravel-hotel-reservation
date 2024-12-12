@@ -18,6 +18,7 @@ class Reservations extends Model
     protected $fillable = [
         'hotel_id',
         'room_id',
+        'user_id',
         'customer_name',
         'customer_email',
         'customer_phone',
@@ -25,4 +26,24 @@ class Reservations extends Model
         'check_out',
         'status'
     ];
+
+    // [Relationships]
+    
+    // Reservation belongs to a user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // Reservation belongs to a hotel (optional depending on your database structure)
+    public function hotel()
+    {
+        return $this->belongsTo(Hotels::class);
+    }
+
+    // Reservation belongs to a room (optional)
+    public function room()
+    {
+        return $this->belongsTo(Rooms::class);
+    }
 }

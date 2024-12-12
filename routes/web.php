@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HotelsController;
+use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
+// Route::get('/', function () {
+//     return ['Laravel' => app()->version()];
+// });
 
+Route::resource('rooms',RoomsController::class);
+Route::resource('hotels',HotelsController::class);
 require __DIR__.'/auth.php';
