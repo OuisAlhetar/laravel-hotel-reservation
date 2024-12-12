@@ -34,7 +34,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/OuisAlhetar/laravel-hotel-reservation.git
 ```
 
 2. Install PHP dependencies:
@@ -95,11 +95,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
+## 👨‍💻 Author
 
-Your Name - [your-email@example.com]
-
-Project Link: [https://github.com/yourusername/laravel-hotel-reservation]
+- GitHub: [@OuisAlhetar](https://github.com/OuisAlhetar)
+- X (Twitter): [@OuisAlhetar](https://x.com/ouis_alhetar?s=35)
 
 ## Acknowledgments
 
